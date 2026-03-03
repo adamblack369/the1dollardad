@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The1DollarDad - Secret Elite System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gucci-green': '#0d2818',
+                        'gucci-green-light': '#1a3a2a',
+                        'gucci-red': '#4a0404',
+                        'gucci-red-light': '#6b0a0a',
+                        'gucci-gold': '#D4AF37',
+                        'gucci-gold-light': '#F4E4A6',
+                        'gucci-cream': '#F5F0E8',
+                        'gucci-dark': '#0a0a0a',
+                        'whatsapp': '#25D366',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Naskh Arabic', serif; background-color: #0a0a0a; }
+        .gold-text { background: linear-gradient(135deg, #D4AF37 0%, #F4E4A6 25%, #D4AF37 50%, #B8941F 75%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .luxury-card { background: linear-gradient(145deg, #0d2818 0%, #1a3a2a 50%, #0d2818 100%); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .luxury-button { background: linear-gradient(135deg, #D4AF37 0%, #F4E4A6 25%, #D4AF37 50%, #B8941F 75%, #D4AF37 100%); background-size: 200% 200%; animation: shimmer 3s ease infinite; }
+        @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .gucci-stripe { background: repeating-linear-gradient(45deg, #0d2818, #0d2818 8px, #4a0404 8px, #4a0404 16px); }
+        .divider-gold { height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, #F4E4A6, #D4AF37, transparent); }
+        .ornament::before, .ornament::after { content: '◆'; color: #D4AF37; font-size: 0.8rem; margin: 0 1rem; }
+        .floating { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .ring-glow { box-shadow: 0 0 40px rgba(212, 175, 55, 0.4), 0 0 80px rgba(212, 175, 55, 0.2); }
+        .image-frame { border: 2px solid transparent; background: linear-gradient(#0d2818, #0d2818) padding-box, linear-gradient(135deg, #D4AF37, #F4E4A6, #D4AF37) border-box; }
+        .book-shadow { box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.15); }
+        .whatsapp-btn { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4); }
+        .whatsapp-btn:hover { box-shadow: 0 15px 50px rgba(37, 211, 102, 0.6); }
+        .lang-btn { transition: all 0.3s ease; }
+        .lang-btn.active { background: linear-gradient(135deg, #D4AF37, #F4E4A6); color: #0d2818; }
+        .lang-btn:hover:not(.active) { background: rgba(212, 175, 55, 0.2); }
+        [dir="ltr"] { text-align: left; }
+        [dir="ltr"] .text-right { text-align: left; }
+        [dir="ltr"] .md\:text-right { text-align: left; }
+        [dir="ltr"] .justify-end { justify-content: flex-start; }
+        [dir="ltr"] .mr-4 { margin-left: 1rem; margin-right: 0; }
+        [dir="ltr"] .ml-auto { margin-right: auto; margin-left: 0; }
+    </style>
+</head>
+<body class="text-[#F5F0E8] overflow-x-hidden">
+
+    <!-- Top Stripe -->
+    <div class="h-2 gucci-stripe w-full"></div>
+
+    <!-- Language Selector -->
+    <div class="bg-[#0a0a0a] border-b border-[#D4AF37]/10 py-2">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center gap-3">
+            <button onclick="setLanguage('ar')" class="lang-btn active px-4 py-1 rounded-sm text-sm font-bold" data-lang="ar">العربية</button>
+            <button onclick="setLanguage('en')" class="lang-btn px-4 py-1 rounded-sm text-sm font-bold text-[#D4AF37]" data-lang="en">English</button>
+            <button onclick="setLanguage('da')" class="lang-btn px-4 py-1 rounded-sm text-sm font-bold text-[#D4AF37]" data-lang="da">Dansk</button>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-[#D4AF37]/20 top-[42px]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F4E4A6] flex items-center justify-center">
+                    <span class="text-[#0d2818] font-bold text-lg">ن</span>
+                </div>
+                <div class="text-2xl font-bold gold-text tracking-wider">The1DollarDad</div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/004571505012?text=Hello%20The1DollarDad%2C%20I%20want%20to%20inquire%20about%20payment%20methods" target="_blank" class="whatsapp-btn text-white px-4 py-2 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span data-i18n="whatsapp">الاستفسار عن الدفع</span>
+                </a>
+                <a href="#buy" class="luxury-button text-[#0d2818] px-6 py-2 rounded-sm font-bold hover:scale-105 transition text-sm" data-i18n="getNow">احصل عليه</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+        <div class="absolute inset-0 gucci-stripe opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a]"></div>
+        
+        <div class="absolute top-1/4 left-10 w-32 h-32 border border-[#D4AF37]/20 rounded-full floating"></div>
+        <div class="absolute bottom-1/4 right-10 w-48 h-48 border border-[#D4AF37]/10 rounded-full floating" style="animation-delay: 2s;"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Book Image -->
+                <div class="order-2 md:order-1 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-[#D4AF37]/20 to-[#D4AF37]/10 rounded-lg blur-2xl"></div>
+                        <img src="system-book.png" alt="The1DollarDad System Book" class="relative w-80 md:w-96 rounded-lg book-shadow floating">
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#4a0404] to-[#6b0a0a] border border-[#D4AF37] px-6 py-2 rounded-sm">
+                            <span class="text-[#D4AF37] font-bold">$1 <span data-i18n="only">فقط</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="order-1 md:order-2 text-center md:text-right">
+                    <div class="inline-block mb-6 border border-[#D4AF37]/40 px-6 py-2 rounded-sm">
+                        <span class="text-[#D4AF37] text-sm tracking-widest uppercase ornament" data-i18n="secretBadge">سر النخبة المحفوظ</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        <span class="text-[#F5F0E8]" data-i18n="heroTitle1">النظام السري الذي يستخدمه</span><br>
+                        <span class="gold-text" data-i18n="heroTitle2">الأغنياء والمشاهير</span><br>
+                        <span class="text-[#F5F0E8]/80 text-2xl md:text-3xl" data-i18n="heroTitle3">لتقسيم وقتهم وتحقيق الحرية</span>
+                    </h1>
+                    
+                    <div class="divider-gold w-48 mx-auto md:mr-0 md:ml-auto mb-6"></div>
+                    
+                    <p class="text-lg text-[#F5F0E8]/70 mb-6 leading-relaxed" data-i18n="heroDesc">
+                        اكتشف الطريقة التي يقسم بها عائلة غوتشي وريتشلد وإيلون ماسك وفيفتي سينت وقتهم
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#buy" class="luxury-button text-[#0d2818] text-lg px-10 py-4 rounded-sm font-bold hover:scale-105 transition shadow-2xl" data-i18n="getSecret">
+                            احصل على سر النخبة الآن
+                        </a>
+                    </div>
+                    
+                    <p class="mt-4 text-[#F5F0E8]/50 text-sm" data-i18n="joinThousands">انضم إلى آلاف الآباء الذين دخلوا عالم النخبة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/004571505012?text=Hello%20The1DollarDad%2C%20I%20want%20to%20inquire%20about%20payment%20methods" target="_blank" class="fixed bottom-6 left-6 z-50 whatsapp-btn w-16 h-16 rounded-full flex items-center justify-center hover:scale-110 transition shadow-2xl">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <div class="h-1 gucci-stripe w-full"></div>
+
+    <!-- Who Uses This System -->
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#D4AF37] text-sm tracking-widest uppercase ornament mb-4 block" data-i18n="whoUses">من يستخدم هذا النظام؟</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#F5F0E8]" data-i18n="eliteTitle">نخبة العالم يطبقونه</h2>
+                <div class="divider-gold w-32 mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="luxury-card p-8 rounded-lg text-center hover:border-[#D4AF37]/60 transition">
+                    <div class="text-5xl mb-4">👔</div>
+                    <h3 class="text-xl font-bold text-[#D4AF37] mb-2">Gucci Family</h3>
+                    <p class="text-[#F5F0E8]/60 text-sm" data-i18n="gucciDesc">إمبراطورية الأزياء الفاخرة</p>
+                </div>
+                <div class="luxury-card p-8 rounded-lg text-center hover:border-[#D4AF37]/60 transition">
+                    <div class="text-5xl mb-4">🏦</div>
+                    <h3 class="text-xl font-bold text-[#D4AF37] mb-2">Rothschild</h3>
+                    <p class="text-[#F5F0E8]/60 text-sm" data-i18n="rothschildDesc">أغنى عائلة في التاريخ</p>
+                </div>
+                <div class="luxury-card p-8 rounded-lg text-center hover:border-[#D4AF37]/60 transition">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold text-[#D4AF37] mb-2">Elon Musk</h3>
+                    <p class="text-[#F5F0E8]/60 text-sm" data-i18n="muskDesc">أغنى رجل في العالم</p>
+                </div>
+                <div class="luxury-card p-8 rounded-lg text-center hover:border-[#D4AF37]/60 transition">
+                    <div class="text-5xl mb-4">🎵</div>
+                    <h3 class="text-xl font-bold text-[#D4AF37] mb-2">50 Cent</h3>
+                    <p class="text-[#F5F0E8]/60 text-sm" data-i18n="fiftyDesc">إمبراطور الموسيقى</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="py-20 bg-gradient-to-b from-[#0d2818]/20 to-transparent">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#D4AF37] text-sm tracking-widest uppercase ornament mb-4 block" data-i18n="whatGet">ماذا تحصل عليه؟</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#F5F0E8]" data-i18n="forOneDollar">مقابل دولار واحد فقط</h2>
+                <div class="divider-gold w-32 mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-center mb-12">
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-6 bg-gradient-to-r from-[#D4AF37]/10 to-[#D4AF37]/5 rounded-xl blur-2xl"></div>
+                        <img src="system-book.png" alt="The1DollarDad Book" class="relative w-72 rounded-lg book-shadow">
+                    </div>
+                </div>
+                
+                <div class="space-y-5">
+                    <div class="luxury-card p-6 rounded-lg flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4E4A6] rounded-lg flex items-center justify-center">
+                            <span class="text-[#0d2818] font-bold text-lg">1</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#D4AF37] mb-1" data-i18n="feature1">استراتيجية تقسيم الوقت السرية</h4>
+                            <p class="text-[#F5F0E8]/60 text-sm" data-i18n="feature1Desc">تعلم كيف تقسم وقتك بين العائلة والعمل والدراسة والعبادة مثل النخبة</p>
+                        </div>
+                    </div>
+                    
+                    <div class="luxury-card p-6 rounded-lg flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4E4A6] rounded-lg flex items-center justify-center">
+                            <span class="text-[#0d2818] font-bold text-lg">2</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#D4AF37] mb-1" data-i18n="feature2">وقت أكثر مع عائلتك</h4>
+                            <p class="text-[#F5F0E8]/60 text-sm" data-i18n="feature2Desc">نظام يوفر لك ساعات إضافية يومياً للأنشطة والمغامرات مع أحبائك</p>
+                        </div>
+                    </div>
+                    
+                    <div class="luxury-card p-6 rounded-lg flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4E4A6] rounded-lg flex items-center justify-center">
+                            <span class="text-[#0d2818] font-bold text-lg">3</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#D4AF37] mb-1" data-i18n="feature3">طريق الحرية المالية</h4>
+                            <p class="text-[#F5F0E8]/60 text-sm" data-i18n="feature3Desc">استراتيجية عملية لتحقيق استقلالك المالي والعمل بذكاء لا بجهد</p>
+                        </div>
+                    </div>
+                    
+                    <div class="luxury-card p-6 rounded-lg flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4E4A6] rounded-lg flex items-center justify-center">
+                            <span class="text-[#0d2818] font-bold text-lg">4</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#D4AF37] mb-1" data-i18n="feature4">فرصة للعمل معنا</h4>
+                            <p class="text-[#F5F0E8]/60 text-sm" data-i18n="feature4Desc">انضم إلى فريقنا وابدأ رحلتك نحو عالم النخبة والثراء</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="h-1 gucci-stripe w-full"></div>
+
+    <!-- Secret Ring Section -->
+    <section class="py-24 bg-gradient-to-b from-[#4a0404]/20 to-[#0d2818]/20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-[#D4AF37] text-sm tracking-widest uppercase ornament mb-4 block" data-i18n="exclusive">الإضافة الحصرية</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#F5F0E8]" data-i18n="ringTitle">خاتم التعويذة السرية</h2>
+                <div class="divider-gold w-32 mx-auto mt-6"></div>
+                <p class="text-[#F5F0E8]/60 mt-4 text-lg" data-i18n="ringKey">مفتاح دخول عالم النخبة</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="image-frame rounded-lg overflow-hidden ring-glow">
+                    <img src="ring-box.jpg" alt="Ring Box" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="image-frame rounded-lg overflow-hidden ring-glow">
+                    <img src="ring-open.jpg" alt="Ring in Box" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="image-frame rounded-lg overflow-hidden ring-glow">
+                    <img src="ring-closeup.jpg" alt="Secret Ring" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+            </div>
+            
+            <div class="luxury-card p-10 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="text-center md:text-right">
+                        <h3 class="text-3xl font-bold text-[#D4AF37] mb-4" data-i18n="gucciDesign">تصميم Gucci الأصيل</h3>
+                        <p class="text-[#F5F0E8]/70 mb-6 leading-relaxed" data-i18n="ringDesc">
+                            الخاتم الذي يرتديه المشاهير والعلماء والفلاسفة. بتصميمه الأخضر والأحمر المميز مع القطعة الذهبية، يرمز إلى الانتماء الحقيقي لعالم النخبة.
+                        </p>
+                        <ul class="text-[#F5F0E8]/60 space-y-3 mb-8 text-right">
+                            <li class="flex items-center gap-2 justify-end"><span data-i18n="ringFeature1">تصميم Gucci الأصيل - أخضر وأحمر وذهبي</span><span class="text-[#D4AF37]">✦</span></li>
+                            <li class="flex items-center gap-2 justify-end"><span data-i18n="ringFeature2">تعويذة سرية للتوفيق والنجاح</span><span class="text-[#D4AF37]">✦</span></li>
+                            <li class="flex items-center gap-2 justify-end"><span data-i18n="ringFeature3">طريقة عمل خاصة بالنخبة فقط</span><span class="text-[#D4AF37]">✦</span></li>
+                            <li class="flex items-center gap-2 justify-end"><span data-i18n="ringFeature4">رمز الانتماء لعالم الأثرياء</span><span class="text-[#D4AF37]">✦</span></li>
+                            <li class="flex items-center gap-2 justify-end"><span data-i18n="ringFeature5">صندوق فاخر باسم the1dollardad</span><span class="text-[#D4AF37]">✦</span></li>
+                        </ul>
+                        <div class="flex items-center justify-center md:justify-end gap-4">
+                            <span class="text-[#F5F0E8]/40 line-through text-xl">$50</span>
+                            <span class="gold-text text-5xl font-bold">$10</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="image-frame rounded-full p-2 ring-glow">
+                            <img src="ring-closeup.jpg" alt="Secret Ring" class="w-64 h-64 rounded-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="h-1 gucci-stripe w-full"></div>
+
+    <!-- Pricing Section -->
+    <section id="buy" class="py-24 bg-[#0a0a0a] relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-[#D4AF37] text-sm tracking-widest uppercase ornament mb-4 block" data-i18n="choosePackage">اختر باقتك</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#F5F0E8]" data-i18n="enterElite">ادخل عالم النخبة الآن</h2>
+                <div class="divider-gold w-32 mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Basic Package -->
+                <div class="luxury-card p-10 rounded-lg border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] transition">
+                    <div class="flex justify-center mb-6">
+                        <img src="system-book.png" alt="The1DollarDad Book" class="w-32 rounded-lg book-shadow">
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-[#F5F0E8] mb-2" data-i18n="basicPackage">الباقة الأساسية</h3>
+                        <p class="text-[#F5F0E8]/50 text-sm" data-i18n="systemEntry">دخول النظام السري</p>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <span class="text-[#F5F0E8]/40 line-through text-2xl">$99</span>
+                        <div class="gold-text text-6xl font-bold">$1</div>
+                        <p class="text-[#D4AF37] text-sm mt-2" data-i18n="teaPrice">فقط - سعر كوب شاي!</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-[#F5F0E8]/70 text-right text-sm">
+                        <li class="flex items-center gap-2 justify-end"><span>✓</span> <span data-i18n="inc1">كتاب The1DollarDad الكامل</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span>✓</span> <span data-i18n="inc2">استراتيجية تقسيم الوقت</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span>✓</span> <span data-i18n="inc3">وقت أكثر مع العائلة</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span>✓</span> <span data-i18n="inc4">طريق الحرية المالية</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span>✓</span> <span data-i18n="inc5">فرصة العمل معنا</span></li>
+                    </ul>
+                    
+                    <button onclick="alert('Redirecting to payment...')" class="w-full luxury-button text-[#0d2818] text-xl py-4 rounded-sm font-bold hover:scale-105 transition" data-i18n="getFor1">
+                        احصل عليه بـ $1
+                    </button>
+                </div>
+                
+                <!-- Premium Package -->
+                <div class="luxury-card p-10 rounded-lg border-2 border-[#D4AF37] relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#D4AF37] to-[#F4E4A6] text-[#0d2818] px-6 py-1 rounded-sm font-bold text-sm" data-i18n="bestseller">
+                        الأكثر مبيعاً
+                    </div>
+                    
+                    <div class="flex justify-center gap-4 mb-6">
+                        <img src="system-book.png" alt="The1DollarDad Book" class="w-24 rounded-lg book-shadow">
+                        <img src="ring-closeup.jpg" alt="Ring" class="w-24 h-24 rounded-full object-cover border-2 border-[#D4AF37] ring-glow">
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-[#D4AF37] mb-2" data-i18n="fullPackage">الباقة الكاملة</h3>
+                        <p class="text-[#F5F0E8]/50 text-sm" data-i18n="systemRing">النظام + خاتم التعويذة</p>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <span class="text-[#F5F0E8]/40 line-through text-2xl">$149</span>
+                        <div class="gold-text text-6xl font-bold">$11</div>
+                        <p class="text-[#D4AF37] text-sm mt-2" data-i18n="save138">وفّر $138!</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-[#F5F0E8]/70 text-right text-sm">
+                        <li class="flex items-center gap-2 justify-end"><span class="text-[#D4AF37]">✓</span> <span data-i18n="pinc1">كل مميزات الباقة الأساسية</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span class="text-[#D4AF37]">✓</span> <span data-i18n="pinc2">خاتم التعويذة السرية</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span class="text-[#D4AF37]">✓</span> <span data-i18n="pinc3">طريقة عمل الخاتم الخاصة</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span class="text-[#D4AF37]">✓</span> <span data-i18n="pinc4">دخول عالم النخبة الحقيقي</span></li>
+                        <li class="flex items-center gap-2 justify-end"><span class="text-[#D4AF37]">✓</span> <span data-i18n="pinc5">صندوق فاخر باسم the1dollardad</span></li>
+                    </ul>
+                    
+                    <button onclick="alert('Redirecting to payment...')" class="w-full luxury-button text-[#0d2818] text-xl py-4 rounded-sm font-bold hover:scale-105 transition shadow-2xl" data-i18n="getFull">
+                        احصل على الباقة الكاملة
+                    </button>
+                </div>
+            </div>
+            
+            <p class="text-center text-[#F5F0E8]/40 mt-8 text-sm" data-i18n="guarantee">دفع آمن • تسليم فوري • ضمان استعادة المال 30 يوم</p>
+        </div>
+    </section>
+
+    <!-- Bottom Stripe -->
+    <div class="h-2 gucci-stripe w-full"></div>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#0a0a0a] text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F4E4A6] flex items-center justify-center">
+                <span class="text-[#0d2818] font-bold">ن</span>
+            </div>
+            <div class="text-xl font-bold gold-text">The1DollarDad</div>
+        </div>
+        <p class="text-[#F5F0E8]/40 text-sm" data-i18n="copyright">© 2024 جميع الحقوق محفوظة - سر النخبة</p>
+    </footer>
+
+    <script>
+        const translations = {
+            ar: {
+                whatsapp: "الاستفسار عن الدفع",
+                getNow: "احصل عليه",
+                only: "فقط",
+                secretBadge: "سر النخبة المحفوظ",
+                heroTitle1: "النظام السري الذي يستخدمه",
+                heroTitle2: "الأغنياء والمشاهير",
+                heroTitle3: "لتقسيم وقتهم وتحقيق الحرية",
+                heroDesc: "اكتشف الطريقة التي يقسم بها عائلة غوتشي وريتشلد وإيلون ماسك وفيفتي سينت وقتهم",
+                getSecret: "احصل على سر النخبة الآن",
+                joinThousands: "انضم إلى آلاف الآباء الذين دخلوا عالم النخبة",
+                whoUses: "من يستخدم هذا النظام؟",
+                eliteTitle: "نخبة العالم يطبقونه",
+                gucciDesc: "إمبراطورية الأزياء الفاخرة",
+                rothschildDesc: "أغنى عائلة في التاريخ",
+                muskDesc: "أغنى رجل في العالم",
+                fiftyDesc: "إمبراطور الموسيقى",
+                whatGet: "ماذا تحصل عليه؟",
+                forOneDollar: "مقابل دولار واحد فقط",
+                feature1: "استراتيجية تقسيم الوقت السرية",
+                feature1Desc: "تعلم كيف تقسم وقتك بين العائلة والعمل والدراسة والعبادة مثل النخبة",
+                feature2: "وقت أكثر مع عائلتك",
+                feature2Desc: "نظام يوفر لك ساعات إضافية يومياً للأنشطة والمغامرات مع أحبائك",
+                feature3: "طريق الحرية المالية",
+                feature3Desc: "استراتيجية عملية لتحقيق استقلالك المالي والعمل بذكاء لا بجهد",
+                feature4: "فرصة للعمل معنا",
+                feature4Desc: "انضم إلى فريقنا وابدأ رحلتك نحو عالم النخبة والثراء",
+                exclusive: "الإضافة الحصرية",
+                ringTitle: "خاتم التعويذة السرية",
+                ringKey: "مفتاح دخول عالم النخبة",
+                gucciDesign: "تصميم Gucci الأصيل",
+                ringDesc: "الخاتم الذي يرتديه المشاهير والعلماء والفلاسفة. بتصميمه الأخضر والأحمر المميز مع القطعة الذهبية، يرمز إلى الانتماء الحقيقي لعالم النخبة.",
+                ringFeature1: "تصميم Gucci الأصيل - أخضر وأحمر وذهبي",
+                ringFeature2: "تعويذة سرية للتوفيق والنجاح",
+                ringFeature3: "طريقة عمل خاصة بالنخبة فقط",
+                ringFeature4: "رمز الانتماء لعالم الأثرياء",
+                ringFeature5: "صندوق فاخر باسم the1dollardad",
+                choosePackage: "اختر باقتك",
+                enterElite: "ادخل عالم النخبة الآن",
+                basicPackage: "الباقة الأساسية",
+                systemEntry: "دخول النظام السري",
+                teaPrice: "فقط - سعر كوب شاي!",
+                inc1: "كتاب The1DollarDad الكامل",
+                inc2: "استراتيجية تقسيم الوقت",
+                inc3: "وقت أكثر مع العائلة",
+                inc4: "طريق الحرية المالية",
+                inc5: "فرصة العمل معنا",
+                getFor1: "احصل عليه بـ $1",
+                bestseller: "الأكثر مبيعاً",
+                fullPackage: "الباقة الكاملة",
+                systemRing: "النظام + خاتم التعويذة",
+                save138: "وفّر $138!",
+                pinc1: "كل مميزات الباقة الأساسية",
+                pinc2: "خاتم التعويذة السرية",
+                pinc3: "طريقة عمل الخاتم الخاصة",
+                pinc4: "دخول عالم النخبة الحقيقي",
+                pinc5: "صندوق فاخر باسم the1dollardad",
+                getFull: "احصل على الباقة الكاملة",
+                guarantee: "دفع آمن • تسليم فوري • ضمان استعادة المال 30 يوم",
+                copyright: "© 2024 جميع الحقوق محفوظة - سر النخبة"
+            },
+            en: {
+                whatsapp: "Inquire About Payment",
+                getNow: "Get It Now",
+                only: "Only",
+                secretBadge: "Elite Secret Reserved",
+                heroTitle1: "The Secret System Used By",
+                heroTitle2: "The Rich & Famous",
+                heroTitle3: "To Manage Time & Achieve Freedom",
+                heroDesc: "Discover how Gucci Family, Rothschild, Elon Musk & 50 Cent divide their time",
+                getSecret: "Get The Elite Secret Now",
+                joinThousands: "Join thousands of fathers who entered the elite world",
+                whoUses: "Who Uses This System?",
+                eliteTitle: "World's Elite Apply It",
+                gucciDesc: "Luxury Fashion Empire",
+                rothschildDesc: "Richest Family in History",
+                muskDesc: "World's Richest Man",
+                fiftyDesc: "Music Emperor",
+                whatGet: "What Do You Get?",
+                forOneDollar: "For Just One Dollar",
+                feature1: "Secret Time Division Strategy",
+                feature1Desc: "Learn how to divide your time between family, work, study & worship like the elite",
+                feature2: "More Time With Family",
+                feature2Desc: "A system that gives you extra hours daily for activities & adventures with loved ones",
+                feature3: "Path to Financial Freedom",
+                feature3Desc: "Practical strategy to achieve financial independence & work smart not hard",
+                feature4: "Opportunity to Work With Us",
+                feature4Desc: "Join our team and start your journey to the elite world & wealth",
+                exclusive: "Exclusive Addition",
+                ringTitle: "The Secret Talisman Ring",
+                ringKey: "Key to Enter Elite World",
+                gucciDesign: "Authentic Gucci Design",
+                ringDesc: "The ring worn by celebrities, scientists & philosophers. With its distinctive green & red design with gold piece, it symbolizes true belonging to the elite world.",
+                ringFeature1: "Authentic Gucci Design - Green, Red & Gold",
+                ringFeature2: "Secret Talisman for Luck & Success",
+                ringFeature3: "Special Method Only for Elite",
+                ringFeature4: "Symbol of Belonging to Wealthy World",
+                ringFeature5: "Luxury Box with the1dollardad Name",
+                choosePackage: "Choose Your Package",
+                enterElite: "Enter Elite World Now",
+                basicPackage: "Basic Package",
+                systemEntry: "Secret System Entry",
+                teaPrice: "Only - Price of a Cup of Tea!",
+                inc1: "Complete The1DollarDad Book",
+                inc2: "Time Division Strategy",
+                inc3: "More Time With Family",
+                inc4: "Path to Financial Freedom",
+                inc5: "Opportunity to Work With Us",
+                getFor1: "Get It For $1",
+                bestseller: "Best Seller",
+                fullPackage: "Full Package",
+                systemRing: "System + Talisman Ring",
+                save138: "Save $138!",
+                pinc1: "All Basic Package Features",
+                pinc2: "Secret Talisman Ring",
+                pinc3: "Special Ring Method",
+                pinc4: "Real Elite World Entry",
+                pinc5: "Luxury Box with the1dollardad Name",
+                getFull: "Get The Full Package",
+                guarantee: "Secure Payment • Instant Delivery • 30-Day Money Back Guarantee",
+                copyright: "© 2024 All Rights Reserved - Elite Secret"
+            },
+            da: {
+                whatsapp: "Spørg Om Betaling",
+                getNow: "Få Det Nu",
+                only: "Kun",
+                secretBadge: "Elite Hemmelighed Reserveret",
+                heroTitle1: "Det Hemmelige System Brugt Af",
+                heroTitle2: "De Rige & Berømte",
+                heroTitle3: "Til At Administrere Tid & Opnå Frihed",
+                heroDesc: "Opdag hvordan Gucci Familien, Rothschild, Elon Musk & 50 Cent fordeler deres tid",
+                getSecret: "Få Elite Hemmeligheden Nu",
+                joinThousands: "Bliv medlem af tusindvis af fædre der gik ind i eliteverdenen",
+                whoUses: "Hvem Bruger Dette System?",
+                eliteTitle: "Verdens Elite Anvender Det",
+                gucciDesc: "Luksus Mode Imperium",
+                rothschildDesc: "Rigeste Familie i Historien",
+                muskDesc: "Verdens Rigeste Mand",
+                fiftyDesc: "Musik Kejser",
+                whatGet: "Hvad Får Du?",
+                forOneDollar: "For Kun En Dollar",
+                feature1: "Hemmelig Tidsfordelingsstrategi",
+                feature1Desc: "Lær hvordan du fordeler din tid mellem familie, arbejde, studie & tilbedelse som eliten",
+                feature2: "Mere Tid Med Familien",
+                feature2Desc: "Et system der giver dig ekstra timer dagligt til aktiviteter & eventyr med kære",
+                feature3: "Sti Til Økonomisk Frihed",
+                feature3Desc: "Praktisk strategi til at opnå økonomisk uafhængighed & arbejde smart ikke hårdt",
+                feature4: "Mulighed for At Arbejde Med Os",
+                feature4Desc: "Bliv medlem af vores team og start din rejse til eliteverdenen & rigdom",
+                exclusive: "Eksklusiv Tilføjelse",
+                ringTitle: "Den Hemmelige Talisman Ring",
+                ringKey: "Nøgle Til At Gå Ind i Eliteverdenen",
+                gucciDesign: "Autentisk Gucci Design",
+                ringDesc: "Ringen båret af berømtheder, videnskabsmænd & filosoffer. Med sit karakteristiske grønne & røde design med guldstykke, symboliserer den sand tilhørsforhold til eliteverdenen.",
+                ringFeature1: "Autentisk Gucci Design - Grøn, Rød & Guld",
+                ringFeature2: "Hemmelig Talisman for Held & Succes",
+                ringFeature3: "Særlig Metode Kun for Elite",
+                ringFeature4: "Symbol på Tilhørsforhold til Rigdom",
+                ringFeature5: "Luksusæske med the1dollardad Navn",
+                choosePackage: "Vælg Din Pakke",
+                enterElite: "Gå Ind i Eliteverdenen Nu",
+                basicPackage: "Basis Pakke",
+                systemEntry: "Hemmeligt System Indgang",
+                teaPrice: "Kun - Prisen på en Kop Te!",
+                inc1: "Komplet The1DollarDad Bog",
+                inc2: "Tidsfordelingsstrategi",
+                inc3: "Mere Tid Med Familien",
+                inc4: "Sti Til Økonomisk Frihed",
+                inc5: "Mulighed for At Arbejde Med Os",
+                getFor1: "Få Det For $1",
+                bestseller: "Bedst Sælgende",
+                fullPackage: "Fuld Pakke",
+                systemRing: "System + Talisman Ring",
+                save138: "Spar $138!",
+                pinc1: "Alle Basis Pakke Funktioner",
+                pinc2: "Hemmelig Talisman Ring",
+                pinc3: "Særlig Ring Metode",
+                pinc4: "Rigtig Eliteverden Indgang",
+                pinc5: "Luksusæske med the1dollardad Navn",
+                getFull: "Få Den Fuld Pakke",
+                guarantee: "Sikker Betaling • Øjeblikkelig Levering • 30-Dages Pengene Tilbage Garanti",
+                copyright: "© 2024 Alle Rettigheder Forbeholdt - Elite Hemmelighed"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('text-[#D4AF37]');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                    btn.classList.remove('text-[#D4AF37]');
+                }
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
